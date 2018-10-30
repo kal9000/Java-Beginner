@@ -1,0 +1,99 @@
+//you can put the result of a method in switch switcher.
+
+//many cases  ... same output
+
+//================================================================
+
+//crazy ass static method tho
+
+
+public class AutoPolicyTest {
+
+	public static void main(String[] args) {
+		
+		AutoPolicy policy1 = new AutoPolicy(111111,"Toyota Camery","NJ");
+		AutoPolicy policy2 = new AutoPolicy(222222, "Santa fe", "TX");
+		
+		policyInNoFaultState(policy1);
+		policyInNoFaultState(policy2);
+	}
+
+	public static void policyInNoFaultState(AutoPolicy policy) {
+		
+		System.out.println("The auto policy: ");
+		System.out.printf("Account #: %d; Car: %s;%nState %s %s a no-fault state%n%n",
+			policy.getAccountNumber(), policy.getMakeAndModel(), policy.getState()
+			, (policy.isNoFaultState() ? "is": "is not")  );
+		
+		
+	}
+		
+}
+
+
+
+public class AutoPolicy {
+	
+	
+	private int accountNumber;
+	private String makeAndModel;
+	private String state;
+	
+	public AutoPolicy(int accountNumber, String makeAndModel, String state) {
+		
+		this.accountNumber = accountNumber;
+		this.makeAndModel = makeAndModel;
+		this.state = state;
+	}
+	
+	
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+	
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	
+	
+	public void setMakeAndModel(String makeAndModel) {
+		this.makeAndModel= makeAndModel;
+	}
+	
+	public String getMakeAndModel() {
+		return makeAndModel;
+	}
+	
+	public void setState(String state) {
+		this.state=state;
+	}
+	
+	
+	public String getState() {
+		return state;
+	}
+	
+	public boolean isNoFaultState() {
+		
+		boolean noFaultState;
+		
+		
+		switch(getState()) {
+		
+		case "MA" :   case "Nj" :    case "PI" :    case "TX" : 
+			noFaultState = true;
+			break;
+			
+		default:
+			noFaultState = false;
+			break;	
+		}
+		return noFaultState;
+	}
+	
+}
+
+
+
+

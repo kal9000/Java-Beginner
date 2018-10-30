@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class SecondDayProject {
+
+	public static void main(String[] args) {
+		
+		 Account my1 = new Account("ToTo", 50.00);
+		 Account my2 = new Account("LOLO", -7.53);
+		 
+		 
+		 System.out.println(my1.getName() +"'s balance is: "+ my1.getNum1());
+		 System.out.println(my2.getName()+"'s balance is: "+ my2.getNum1());
+
+		 System.out.println("-----------");
+		 
+		 System.out.println("Please enter depositionAmount for both clients: ");
+		 Scanner input = new Scanner(System.in);
+
+		 double depositionAmount1 = input.nextDouble();
+		 double depositionAmount2 = input.nextDouble();
+		 
+         my1.deposit(depositionAmount1);
+         my2.deposit(depositionAmount2);
+         
+         System.out.println(my1.getName() +"'s balance is: "+ my1.getNum1());
+         System.out.println(my2.getName()+"'s balance is: "+ my2.getNum1());
+	}
+}
+
+public class Account {
+	
+	private String name;
+	private double num1 ;
+	
+	public Account(String name, double num1) {
+		this.name = name;
+		
+		if(num1>0.0) { 
+			this.num1 = num1;
+		}		
+	}
+	
+	
+	public void deposit(double depositnum) {
+		if(depositnum> 0.0) {
+			num1 = num1 + depositnum;
+		}
+	}
+	
+	public double getNum1() {
+		return num1;
+	}
+	
+	public void setName(String name) {
+		this.name=name;
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+
+}
+

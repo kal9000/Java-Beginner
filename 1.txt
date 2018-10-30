@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class SecondDayProject {
+
+	public static void main(String[] args) {
+		
+		 Scanner input = new Scanner(System.in);
+		 Account myAccount = new Account();
+		 
+		 System.out.println("The initial price is: "+ myAccount.getName());
+		 System.out.print("Please enter a name: ");
+		 
+		 String theName= input.next();
+		 myAccount.setName(theName);
+		 System.out.println();
+		 
+		 System.out.println("Name in object myAccount is: "+myAccount.getName());
+
+	}
+}
+
+public class Account {
+	
+	private String name;
+	
+	
+	public void setName(String name) {
+		this.name=name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+}

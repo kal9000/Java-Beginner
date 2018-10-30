@@ -1,0 +1,32 @@
+//you can put if statment inside of the main class
+
+import java.util.Scanner;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+	
+      Student one = new Student("Ahmed", 86.1);
+      Student two = new Student("Hisham",193.5);
+      Student three = new Student("waleed", 76.7);
+      
+      Scanner S =new Scanner(System.in);
+      
+      
+      System.out.println("The mark of "+one.getName()+" is: "+one.grade()+" because his grade is: "+
+      one.getAverage());
+     
+      System.out.println("============");
+      
+      if(one.getAverage()>two.getAverage()) {
+    	 System.out.println(one.getName()+" is smarter than "+ two.getName());
+    	
+     }
+     else if(one.getAverage()< two.getAverage()) {
+    	 System.out.println(two.getName()+" is smarter than "+ one.getName());
+     }
+     else {
+    	 System.out.println("Their grades are the same");
+     }    
+	}
+}

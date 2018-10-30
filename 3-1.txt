@@ -1,0 +1,116 @@
+//return method can't be invoked without "System.out.println();"
+//there will be no result.
+//the only thing you will get is any "true" "System.out.println();" statment
+
+
+import java.util.Scanner;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+	
+      Student one = new Student("Ahmed", 86.1);
+      Student two = new Student("Hisham",193.5);
+      Student three = new Student("waleed", 76.7);
+      
+     System.out.println(one.getName() +"'s grade is: "+ one.getAverage());
+     System.out.println("=====================");
+     
+     one.setName("3abbas");
+     
+     System.out.println(one.getName() +"'s grade is: "+ one.getAverage());
+     System.out.println("=====================");
+     
+     one.getName();
+     System.out.println("=====================");
+     System.out.println( one.getName());
+     System.out.println("============1=========");
+     System.out.println(one.compareGrades(40, 70));
+     System.out.println("=====================");
+     one.compareGrades(40, 70);
+     System.out.println("=====================");
+     System.out.println(one.compareGrades(40, 40));
+     System.out.println("=====================");
+     one.compareGrades(40, 40);
+
+     }
+  }
+
+
+
+public class Student {
+	
+	private String name;
+	private double average;
+	
+	public Student(String name, double average) {
+		
+		this.name = name;
+		
+		if(average>0.0 && average<=100.0)
+			
+				this.average = average;
+		
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		
+		System.out.println("rrrrrrr");
+		return name;
+	}
+	
+	public void setAverage() {
+		if(average>0.0 && average<=100.0) 
+			
+			this.average = average;
+		else { 
+System.out.println("the number u entered is wrong");			
+		}
+	}
+	
+	public double getAverage() {
+		return average;
+	}
+	
+	
+	public String grade() {
+		String getGrade = "";
+		
+		if(average>=90.0)
+			getGrade = "A";
+		else if(average>=80.0)
+			getGrade = "B";
+		else if(average>=70.0)
+			getGrade = "C";
+		else if (average>=60.0)
+			getGrade = "D";
+		else
+			getGrade = "f";
+		
+		return getGrade;
+	}
+	
+	public String compareGrades(double A, double B) {
+		
+		String answer ="yop";
+		
+		if(A>B) 
+			answer=("Ahmed is smarter than Hisham");
+		else if (A<B)
+			answer=("Hisham is smarter than Ahmed");
+		else
+			System.out.println("No one is smarter than the other!");
+		
+		return answer;
+		
+	}
+	
+
+}
+
+
+
